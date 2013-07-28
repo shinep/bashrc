@@ -1,3 +1,11 @@
+######################
+# DEPENDANCIES
+
+#sudo apt-get install xmllint
+#sudo apt-get install figlet
+#sudo apt-get install secure-delete
+######################
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -237,6 +245,7 @@ alias ls='ls --color=auto'
 
 alias less='less -W'
 alias rm='srm -rvz'
+alias xmllint='xmllint --format'
 
 
 alias ll='ls -l --group-directories-first'

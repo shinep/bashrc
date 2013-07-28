@@ -378,13 +378,15 @@ ${txtcyn}[Ctrl]-r     ${txtrst}resume printing output to the console"
 
 tips()
 {
-  echo -e "\n${txtpur}TIPS
-----------------------------------------------------------------------${txtrst}"
+  echo ""
   echo -e "${txtcyn}top     		: ${txtrst}f-to show options,c-to show full path,1-to show individual cpus"
-  echo -e "${txtcyn}ssh     		: ${txtrst}~[Ctrl]-Z to get back to local terminal, fg %1 to bring back ssh session. ssh-copy-id user@host"
+  echo -e "${txtcyn}ssh     		: ${txtrst}~[Ctrl]-Z to get back to local terminal, fg %1 to bring back ssh session. ssh-copy-id user@host
+                          ~. disconnect, ~? help, ~# list forwarded connections"
+  echo ""
   echo -e "${txtcyn}zip -e zip-name files     	: ${txtrst}for zipping with a password"
+  echo -e "${txtcyn}time (command) > /dev/null      : ${txtrst}to time a command"
+  echo ""
   echo -e "${txtcyn}[ Alt]-number 		: ${txtrst}switches between tabs in terminal"
-  echo -e "${txtcyn}time (command) > /dev/null  : ${txtrst}to time a command"
   echo -e "${txtcyn}w  last lastb     	: ${txtrst}shows information about users logged in"
   echo -e "${txtcyn}dirs pushd popd     	: ${txtrst}for listing, storing and popping directory locations"
   echo -e "${txtcyn}dpkg -l | less -W     	: ${txtrst}lists all installed packages"
@@ -394,6 +396,7 @@ tips()
   echo -e "${txtcyn}man -k <command name>   : ${txtrst}to search the man pages for a command"
   echo ""
   echo -e "${txtcyn}Various commands1       : ${txtrst}mkdir -p *, rm -- -file.txt, type <command>, file <filename>,(head;tail) < (file),update-alternatives --config editor"
+  echo ""
  }
 
 function emacstips {

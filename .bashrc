@@ -34,14 +34,14 @@ NC='\e[0m' # No Color
 # this will display the username, date, time, a calendar, the amount of users, and the up time.
 clear
 # Gotta love ASCII art with figlet
-figlet "Welcome, " $USER;
-echo -e ""
-echo -ne "Today is "; date
-echo -e  "${BROWN}"; df ;
-echo -e  "${LIGHTBLUE}"; uname -a ;
+#figlet "Welcome, " $USER;
+#echo -e ""
+#echo -ne "Today is "; date
+#echo -e  "${BROWN}"; df ;
+#echo -e  "${LIGHTBLUE}"; uname -a ;
 #echo -e  "${BROWN}"; free ;
-echo -e ""
-echo -ne "${BLACK}Up time:";uptime | awk /'up/'
+#echo -e ""
+echo -ne "${BROWN}Up time:";uptime | awk /'up/'
 #echo "";
 
 

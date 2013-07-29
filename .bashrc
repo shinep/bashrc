@@ -311,6 +311,7 @@ functions()
   echo -e "${txtcyn}vitips 		: ${txtrst}tips on vi"
   echo -e "${txtcyn}lesstips 	: ${txtrst}tips on less"
   echo -e "${txtcyn}tcpdumptips 	: ${txtrst}tips on tcpdump"
+  echo -e "${txtcyn}mongotips 	: ${txtrst}basic mongo functionality"
 }
 
 function bashtips {
@@ -531,6 +532,17 @@ ${txtpur}----------------------------------------------------------------------
 "
 }
 
+mongotips()
+{
+  echo -e "${txtcyn}mongo <host-name>"
+  echo -e "${txtcyn}show dbs"
+  echo -e "${txtcyn}use <db-name>"
+  echo -e "${txtcyn}show collections"
+  echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).count()"
+  echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).pretty()"
+  echo -e "${txtcyn}db.messages.remove({'subject.type':'event'})"
+  
+ }
 ##======================================
 #####NOKIA FUNCTIONS####################
 ##======================================

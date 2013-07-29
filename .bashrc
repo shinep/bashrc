@@ -8,23 +8,6 @@
 #sudo apt-get install git
 ######################
 
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
-######################
-# CUSTOM STARTS HERE #
-######################
-
 # Define a few Colours
 BLACK='\e[0;30m'
 BLUE='\e[0;34m'
@@ -61,6 +44,21 @@ echo -e ""
 echo -ne "${BLACK}Up time:";uptime | awk /'up/'
 #echo "";
 
+
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -74,9 +72,6 @@ shopt -s checkwinsize
 
 # correct misspelled directories
 shopt -s cdspell
-
-# make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -146,14 +141,11 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=100000
 HISTFILESIZE=200000
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth:ignoredups
-
 export HISTIGNORE=l:ls:ps:cd:exit
 export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
-
 bind '"\e[A":history-search-backward'
 bind '"\e[A":history-search-backward'
 
@@ -167,9 +159,7 @@ or () {
 	fi
 }
 
-#--------------------------///
-# EXTRACTION PROGRAM
-#--------------------------///
+# extract archive files
 extract () {
 	if [ -f "$1" ] ; then
 		for i in "$@"
@@ -223,7 +213,6 @@ up(){
 ## Aliases
 
 alias -p f="find . -iname -type f"
-
 alias install='sudo -E apt-get install'
 alias search='sudo -E apt-cache search'
 alias show='sudo -E apt-cache show'
@@ -231,24 +220,28 @@ alias remove='sudo -E apt-get purge'
 alias orphand='sudo deborphan | xargs sudo apt-get -y remove --purge'
 alias cleanup='sudo -E apt-get autoclean && sudo -E apt-get autoremove && sudo -E apt-get clean && sudo -E apt-get remove && orphand'
 alias updatedb='sudo updatedb'
-
 alias df='df -h -x tmpfs -x usbfs'
 alias du='du -h --max-depth=1'
-
-#show most popular commands
-#alias top-commands='history | awk '{a[$2]++}END{for(i in a){print a[i]" "i}}' | sort -rn | head'
-
 # empty trash
 alias trash="rm -fr ~/.local/share/Trash"
-
 alias ls='ls --color=auto'
-
 alias less='less -W'
 alias rm='srm -rvz'
 alias xmllint='xmllint --format'
-
-
 alias ll='ls -l --group-directories-first'
+alias mkdir='mkdir -p'
+alias cp="cp -v"
+alias grep='grep -iIr --color=tty'
+alias free='free -m'
+alias ports="lsof -i -n -P"
+alias ps='ps auxfwww'
+alias ping='ping -c 10'
+alias openports='netstat -nape --inet'
+alias gpull='git pull origin master -u'
+
+
+export HISTIGNORE="ls:cd:[bf]g:exit"
+
 #Automatically do an ls after each cd
 cd() {
   if [ -n "$1" ]; then
@@ -257,32 +250,6 @@ cd() {
     builtin cd ~ && ll
   fi
 }
-
-
-function apt-history(){
-      case "$1" in
-        install)
-              cat /var/log/dpkg.log | grep 'install '
-              ;;
-        upgrade|remove)
-              cat /var/log/dpkg.log | grep $1
-              ;;
-        rollback)
-              cat /var/log/dpkg.log | grep upgrade | \
-                  grep "$2" -A10000000 | \
-                  grep "$3" -B10000000 | \
-                  awk '{print $4"="$5}'
-              ;;
-        *)
-              cat /var/log/dpkg.log
-              ;;
-      esac
-}
-
-alias ps='ps auxfwww'
-alias ping='ping -c 10'
-alias openports='netstat -nape --inet'
-alias gpull='git pull origin master -u'
 
 netinfo ()
 {
@@ -296,11 +263,6 @@ echo ""
 /sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
 echo "---------------------------------------------------"
 }
-
-alias grep='grep -iIr --color=tty'
-alias free='free -m'
-alias ports="lsof -i -n -P"
-export HISTIGNORE="ls:cd:[bf]g:exit"
 
 mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
 mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
@@ -321,7 +283,6 @@ functions()
 {
   echo -e "\n${txtpur}FUNCTIONS
 ----------------------------------------------------------------------${txtrst}"
-  echo -e "${txtcyn}apt-history 	: ${txtrst}apt-get history"
   echo -e "${txtcyn}cd 		: ${txtrst}automatically do an ls after each cd"
   echo -e "${txtcyn}extract <file> 	:${txtrst} extract a file"
   echo -e "${txtcyn}myip 		: ${txtrst}gets my external ip address"
@@ -341,8 +302,7 @@ functions()
 }
 
 function bashtips {
-echo -e "
-${txtpur}HISTORY
+echo -e "${txtpur}HISTORY
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}!!        ${txtrst}last command
 ${txtcyn}!!:p      ${txtrst}Overview without execution of the last command
@@ -374,7 +334,9 @@ ${txtpur}MISC
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[command or \"grep\" or \]      ${txtrst}ignore aliases if present
 ${txtcyn}[Ctrl]-s     ${txtrst}stop printing output to the console
-${txtcyn}[Ctrl]-r     ${txtrst}resume printing output to the console"
+${txtcyn}[Ctrl]-r     ${txtrst}resume printing output to the console
+${txtpur}----------------------------------------------------------------------
+"
 }
 
 
@@ -402,8 +364,7 @@ tips()
  }
 
 function emacstips {
-echo -e "
-${txtpur}GENERAL
+echo -e "${txtpur}GENERAL
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[C]-x-[C]-f     ${txtrst}open file
 ${txtcyn}[C]-x-f         ${txtrst}open recently opened files
@@ -455,12 +416,13 @@ ${txtcyn}[A]-Q           ${txtrst}format inside a method
 ${txtcyn}[C]-x-H-Tab     ${txtrst}selects the whole file and use tab to format it
 ${txtcyn}[A]-.           ${txtrst}to go to the function definition while cursor on the function
 ${txtcyn}[A]-,           ${txtrst}get back to the current location after viewing the function definition
-${txtcyn}[C]-x-[C]-I     ${txtrst}show all the functions inside a file"
+${txtcyn}[C]-x-[C]-I     ${txtrst}show all the functions inside a file
+${txtpur}----------------------------------------------------------------------
+"
 }
 
 function vitips {
-echo -e "
-${txtpur}GENERAL
+echo -e "${txtpur}
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[i]     ${txtrst}inserts text to the left of cursor
 ${txtcyn}[o]     ${txtrst}begins a new line below the current line
@@ -511,13 +473,14 @@ ${txtcyn}[:+X+!]              ${txtrst}will undo everything since the last disk 
 ${txtcyn}[:! ls -l]           ${txtrst}run external commands inside vi
 ${txtcyn}[:w !sudo tee %]     ${txtrst}save a read only file in Vi
 
-${txtcyn}[+number file]      ${txtrst}open and go to the number-th line in the file (+/search-term)"
+${txtcyn}[+number file]      ${txtrst}open and go to the number-th line in the file (+/search-term)
+${txtpur}----------------------------------------------------------------------
+"
 }
 
 
 function lesstips {
-echo -e "
-${txtpur}GENERAL
+echo -e "${txtpur}
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[g]     ${txtrst}go to the begining of the file
 ${txtcyn}[q]     ${txtrst}quit less
@@ -532,12 +495,13 @@ ${txtcyn}[&pattern]     ${txtrst}display only the matching lines, not all.
 
 ${txtcyn}[:e file2]     ${txtrst}open another file 
 ${txtcyn}[:n]           ${txtrst}next file
-${txtcyn}[:p]           ${txtrst}previous file"
+${txtcyn}[:p]           ${txtrst}previous file
+${txtpur}----------------------------------------------------------------------
+"
 }
 
 function tcpdumptips {
-echo -e "
-${txtpur}GENERAL
+echo -e "${txtpur}
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[-i etho]     ${txtrst}capture packets from a aparticular interface etho
 ${txtcyn}[-A]          ${txtrst}display captured packets in ASCII
@@ -550,7 +514,9 @@ ${txtcyn}[dst 1.2.3.4]      		${txtrst}capture packets for destination 1.2.3.4
 ${txtcyn}[dst 1.2.3.4 and port 80]      ${txtrst}capture packets for destination 1.2.3.4 and port 80
 
 ${txtcyn}[-w file.pcap]     ${txtrst}capture packets and write to file
-${txtcyn}[-r file.pcap]     ${txtrst}read from file (use -tttt as well)"
+${txtcyn}[-r file.pcap]     ${txtrst}read from file (use -tttt as well)
+${txtpur}----------------------------------------------------------------------
+"
 }
 
 

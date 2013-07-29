@@ -4,6 +4,7 @@
 #sudo apt-get install xmllint
 #sudo apt-get install figlet
 #sudo apt-get install secure-delete
+#sudo apt-get install git
 ######################
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -236,7 +237,7 @@ alias du='du -h --max-depth=1'
 #alias top-commands='history | awk '{a[$2]++}END{for(i in a){print a[i]" "i}}' | sort -rn | head'
 
 # empty trash
-alias trash="rm -fr ~/.Trash"
+alias trash="rm -fr ~/.local/share/Trash"
 
 alias ls='ls --color=auto'
 
@@ -482,7 +483,8 @@ ${txtcyn}[R]     ${txtrst}replaces characters untill ESC is pressed
 
 ${txtcyn}[x]     ${txtrst}deletes a single character
 ${txtcyn}[dd]    ${txtrst}deletes the whole line
-${txtcyn}[D]     ${txtrst}deletes all text from cursor to end of line
+${txtcyn}[dw]    ${txtrst}deletes a word
+${txtcyn}[D,d$]     ${txtrst}deletes all text from cursor to end of line
 
 ${txtcyn}[yy]    ${txtrst}copies the line of the text
 ${txtcyn}[P]     ${txtrst}pastes the text after the cursor
@@ -499,6 +501,7 @@ ${txtcyn}[Ctrl-G]     ${txtrst}shows file name, total lines and current position
 ${txtcyn}[n]              ${txtrst}search forward (start the search with /search-term or ?search-term)
 ${txtcyn}[N]              ${txtrst}search backwardward
 ${txtcyn}[:%s/bob/BOB/g]  ${txtrst}replaces all instances of bob with BOB globally
+${txtcyn}[:%s//BOB/g]     ${txtrst}replaces all instances of last search with BOB globally
 
 ${txtcyn}[:set all]        ${txtrst}to view all the options
 ${txtcyn}[:set number]     ${txtrst}set line number

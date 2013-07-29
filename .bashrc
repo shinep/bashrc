@@ -547,7 +547,7 @@ mongotips()
 #####NOKIA FUNCTIONS####################
 ##======================================
 function prod() {
-   /usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no spaul@$1.pr.int.ent.nokia.com
+   /usr/bin/ssh spaul@$1.pr.int.ent.nokia.com
 }
 
 function dev() {

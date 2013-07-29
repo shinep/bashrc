@@ -309,20 +309,6 @@ myip()
 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//';
 }
 
-#git configurations
-#git config --global color.ui auto
-git config --global --add color.ui true
-git config branch.master.rebase true
-git config --global branch.autosetuprebase always
-git config --global push.default tracking
-git config --global --bool pull.rebase true
-
-git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --decorate"
-git config --global user.name "Shine Paul"
-git config --global user.email "shine.paul@nokia.com"
-
-
-
 txtrst='\e[0m'    # Text Reset
 txtcyn='\e[0;36m' # Cyan
 txtpur='\e[0;35m' # Violet

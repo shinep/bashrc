@@ -204,9 +204,6 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 export PS1='\[\e[0;32m[\t]\e[m$(tput setaf 3)\]\u@\h:\[$(tput sgr0)$(tput setaf 6)\]\w\[$(tput sgr0)$(tput setaf 2)\] $(__git_ps1 "[%s]") \[$(tput sgr0)\]$ '
 
-git config --global color.ui auto
-
-
 up(){
   local d=""
   limit=$1
@@ -310,6 +307,18 @@ myip()
 { 
 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//';
 }
+
+#git configurations
+git config --global color.ui auto
+git config branch.master.rebase true
+git config --global branch.autosetuprebase always
+git config --global push.default tracking
+git config --global --bool pull.rebase true
+
+git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --decorate"
+git config --global user.name "Shine Paul"
+git config --global user.email "shine.paul@nokia.com"
+
 
 
 txtrst='\e[0m'    # Text Reset

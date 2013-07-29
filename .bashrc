@@ -2,6 +2,7 @@
 # DEPENDANCIES
 
 #sudo apt-get install xmllint
+#install libxml2-utils (for debian)
 #sudo apt-get install figlet
 #sudo apt-get install secure-delete
 #sudo apt-get install git
@@ -225,6 +226,7 @@ alias -p f="find . -iname -type f"
 
 alias install='sudo -E apt-get install'
 alias search='sudo -E apt-cache search'
+alias show='sudo -E apt-cache show'
 alias remove='sudo -E apt-get purge'
 alias orphand='sudo deborphan | xargs sudo apt-get -y remove --purge'
 alias cleanup='sudo -E apt-get autoclean && sudo -E apt-get autoremove && sudo -E apt-get clean && sudo -E apt-get remove && orphand'
@@ -379,7 +381,7 @@ ${txtcyn}[Ctrl]-r     ${txtrst}resume printing output to the console"
 tips()
 {
   echo ""
-  echo -e "${txtcyn}top     		: ${txtrst}f-to show options,c-to show full path,1-to show individual cpus"
+  echo -e "${txtcyn}top     		: ${txtrst}f-to show options,c-to show full path,1-to show individual cpus,h-help,z-color"
   echo -e "${txtcyn}ssh     		: ${txtrst}~[Ctrl]-Z to get back to local terminal, fg %1 to bring back ssh session. ssh-copy-id user@host
                           ~. disconnect, ~? help, ~# list forwarded connections"
   echo ""

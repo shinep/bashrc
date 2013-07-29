@@ -186,7 +186,7 @@ extract () {
 
 export GREP_OPTIONS=--color=auto
 export GREP_COLORS='ms=01;36'
-export PROMPT_COMMAND='echo -ne "\033]0;date +%k:%m:%S${HOSTNAME}:${PWD}\007"'
+export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}:${PWD}\007"'
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'

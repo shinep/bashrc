@@ -252,6 +252,11 @@ cd() {
   fi
 }
 
+md() {
+    mkdir -p -v $1
+    cd $1
+}
+
 xlint() {
   xmllint --output $1 --format $1
 }
@@ -290,6 +295,7 @@ functions()
 ----------------------------------------------------------------------${txtrst}"
   echo -e "${txtcyn}cd 		: ${txtrst}automatically do an ls after each cd"
   echo -e "${txtcyn}extract <file> 	:${txtrst} extract a file"
+  echo -e "${txtcyn}md 		: ${txtrst}creates dir structure and cd into the last one."
   echo -e "${txtcyn}myip 		: ${txtrst}gets my external ip address"
   echo -e "${txtcyn}mktar() <directory> :${txtrst} create a tar archive file"
   echo -e "${txtcyn}mktgz() <directory> :${txtrst} create a tar.gz archive file"
@@ -297,6 +303,7 @@ functions()
   echo -e "${txtcyn}netinfo 	: ${txtrst}gets my internal ip address"
   echo -e "${txtcyn}or <filename> 	: ${txtrst}creates a backup file"
   echo -e "${txtcyn}up <number> 	: ${txtrst}goes <number> level up like cd .."
+  echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
   echo -e ""
   echo -e "${txtcyn}tips 		: ${txtrst}general tips"
   echo -e "${txtcyn}bashtips 	: ${txtrst}tips on bash terminal"
@@ -304,7 +311,6 @@ functions()
   echo -e "${txtcyn}vitips 		: ${txtrst}tips on vi"
   echo -e "${txtcyn}lesstips 	: ${txtrst}tips on less"
   echo -e "${txtcyn}tcpdumptips 	: ${txtrst}tips on tcpdump"
-  echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
 }
 
 function bashtips {

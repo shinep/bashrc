@@ -237,6 +237,7 @@ alias ports="lsof -i -n -P"
 alias ps='ps auxfwww'
 alias ping='ping -c 10'
 alias openports='netstat -nape --inet'
+alias ssh-keygen='ssh-keygen -Rv'
 alias gpull='git pull origin master -u'
 
 

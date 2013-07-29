@@ -310,7 +310,8 @@ wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//
 }
 
 #git configurations
-git config --global color.ui auto
+#git config --global color.ui auto
+git config --global --add color.ui true
 git config branch.master.rebase true
 git config --global branch.autosetuprebase always
 git config --global push.default tracking

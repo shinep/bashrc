@@ -252,6 +252,10 @@ cd() {
   fi
 }
 
+xlint() {
+  xmllint --output $1 --format $1
+}
+
 netinfo ()
 {
 echo "--------------- Network Information ---------------"
@@ -300,6 +304,7 @@ functions()
   echo -e "${txtcyn}vitips 		: ${txtrst}tips on vi"
   echo -e "${txtcyn}lesstips 	: ${txtrst}tips on less"
   echo -e "${txtcyn}tcpdumptips 	: ${txtrst}tips on tcpdump"
+  echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
 }
 
 function bashtips {

@@ -313,6 +313,7 @@ functions()
   echo -e "${txtcyn}tcpdumptips 	: ${txtrst}tips on tcpdump"
   echo -e "${txtcyn}mongotips 	: ${txtrst}basic mongo functionality"
   echo -e "${txtcyn}debugtips 	: ${txtrst}tips on debugging production servers"
+  echo -e "${txtcyn}rangertips 	: ${txtrst}tips on using ranger"
 }
 
 function bashtips {
@@ -554,6 +555,41 @@ debugtips()
   echo -e "${txtcyn}pstree, top , iostat -x 5 , kill -3 <java process-id> "
   echo -e "${txtcyn}http://<serviceName>/Library/1.x/info/threads"
   echo -e "${txtcyn}http://<serviceName>/Library/1.x/info/metrics"
+}
+
+function rangertips {
+echo -e "${txtpur}
+----------------------------------------------------------------------${txtrst}
+${txtcyn}[s]     ${txtrst}opens a shell for commands like rm etc.
+${txtcyn}[r]     ${txtrst}displays open-with for specifying vi,emacs etc.
+${txtcyn}[E]     ${txtrst}opens the file in default editor for editing.
+${txtcyn}[; or :]     ${txtrst}open command tool bar (cut, copy, delete, paste,rename etc).
+${txtcyn}[i]     ${txtrst}showing info/contents of the file.
+${txtcyn}[I]     ${txtrst}rename the current file.
+
+${txtcyn}[h]     ${txtrst}go backward in history.
+${txtcyn}[l]     ${txtrst}go forward in history.
+
+${txtcyn}[Space]     ${txtrst}selects a file/directory.
+${txtcyn}[Escape]    ${txtrst}cancels the last command.
+
+${txtcyn}[V]      ${txtrst}enables viual selection mode.
+${txtcyn}[uv]     ${txtrst}clear all the selection.
+
+${txtcyn}[dd]     ${txtrst}to paste
+${txtcyn}[yy]     ${txtrst}to copy
+${txtcyn}[pp]     ${txtrst}to paste
+
+${txtcyn}[gn]     ${txtrst}new tab
+${txtcyn}[gh]     ${txtrst}to home directory
+${txtcyn}[gc]     ${txtrst}close tab
+${txtcyn}[q]      ${txtrst}to quit
+
+${txtcyn}[?]     ${txtrst}displaying man page
+${txtcyn}[/s]    ${txtrst}searching directory s.
+
+${txtpur}----------------------------------------------------------------------
+"
 }
 ##======================================
 #####NOKIA FUNCTIONS####################

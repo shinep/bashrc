@@ -312,6 +312,7 @@ functions()
   echo -e "${txtcyn}lesstips 	: ${txtrst}tips on less"
   echo -e "${txtcyn}tcpdumptips 	: ${txtrst}tips on tcpdump"
   echo -e "${txtcyn}mongotips 	: ${txtrst}basic mongo functionality"
+  echo -e "${txtcyn}debugtips 	: ${txtrst}tips on debugging production servers"
 }
 
 function bashtips {
@@ -546,6 +547,14 @@ mongotips()
   echo -e "${txtcyn}db.messages.remove({'subject.type':'event'})"
   
  }
+
+debugtips()
+{
+  echo -e "${txtcyn}Look in /var/log/jetty or jboss and /usr/log/* using tail -F"
+  echo -e "${txtcyn}pstree, top , iostat -x 5 , kill -3 <java process-id> "
+  echo -e "${txtcyn}http://<serviceName>/Library/1.x/info/threads"
+  echo -e "${txtcyn}http://<serviceName>/Library/1.x/info/metrics"
+}
 ##======================================
 #####NOKIA FUNCTIONS####################
 ##======================================

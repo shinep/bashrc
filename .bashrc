@@ -184,6 +184,7 @@ extract () {
 	fi
 }
 
+export EDITOR=/usr/bin/vi
 export GREP_OPTIONS=--color=auto
 export GREP_COLORS='ms=01;36'
 export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}:${PWD}\007"'
@@ -341,6 +342,8 @@ ${txtcyn}[Ctrl]-xx    ${txtrst}move between start of command line and current cu
 ${txtcyn}[Ctrl]-y     ${txtrst}paste the contents of the buffer
 ${txtcyn}[Ctrl]-o     ${txtrst}If you hit CTRL+o after picking a command from your history, the command is executed, and the next command from history is prepared on the prompt
 
+${txtcyn}[Ctrl]-LRArrow     ${txtrst}Move between words
+
 ${txtpur}COMPLETION
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}[ Alt].      ${txtrst}scroll through the arguments of the last command
@@ -453,8 +456,11 @@ ${txtcyn}[dw]    ${txtrst}deletes a word
 ${txtcyn}[D,d$]     ${txtrst}deletes all text from cursor to end of line
 
 ${txtcyn}[yy]    ${txtrst}copies the line of the text
+${txtcyn}[yw]    ${txtrst}copies from the current cusror pos to end of word
+${txtcyn}[y$]    ${txtrst}copies from the current cursor pos to end of line
+${txtcyn}[yG]    ${txtrst}copies from the current cursor pos to end of file
 ${txtcyn}[P]     ${txtrst}pastes the text after the cursor
-${txtcyn}[U]     ${txtrst}Undo changes
+${txtcyn}[U]     ${txtrst}Undo all changes made to a line
 ${txtcyn}[G]     ${txtrst}end of the file
 ${txtcyn}[gg]    ${txtrst}start of the file
 
@@ -462,6 +468,8 @@ ${txtcyn}[Ctrl-F]     ${txtrst}Move forward a page
 ${txtcyn}[Ctrl-B]     ${txtrst}Move backward a page
 ${txtcyn}[Ctrl-U]     ${txtrst}Move up half a page
 ${txtcyn}[Ctrl-D]     ${txtrst}Move down half a page
+${txtcyn}[Ctrl-i]     ${txtrst}Jump to the previous location
+${txtcyn}[Ctrl-o]     ${txtrst}Jump to the next location
 ${txtcyn}[Ctrl-G]     ${txtrst}shows file name, total lines and current position
 
 ${txtcyn}[n]              ${txtrst}search forward (start the search with /search-term or ?search-term)
@@ -484,7 +492,7 @@ ${txtcyn}[:x]      ${txtrst}exits vi and prompts for saving
 ${txtcyn}[:wq]     ${txtrst}writes and quits vi
 ${txtcyn}[ZZ]      ${txtrst}saves and quits vi
 
-${txtcyn}[:+X+!]              ${txtrst}will undo everything since the last disk write
+${txtcyn}[:e!]                ${txtrst}will undo everything since the last save
 ${txtcyn}[:! ls -l]           ${txtrst}run external commands inside vi
 ${txtcyn}[:w !sudo tee %]     ${txtrst}save a read only file in Vi
 

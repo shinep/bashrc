@@ -464,18 +464,18 @@ ${txtcyn}[Ctrl-G]     ${txtrst}shows file name, total lines and current position
 
 ${txtcyn}[n]              ${txtrst}search forward (start the search with /search-term or ?search-term)
 ${txtcyn}[N]              ${txtrst}search backwardward
-${txtcyn}[:%s/bob/BOB/g]  ${txtrst}replaces all instances of bob with BOB globally
-${txtcyn}[:%s//BOB/g]     ${txtrst}replaces all instances of last search with BOB globally
+${txtcyn}[:%s/bob/BOB/gc]  ${txtrst}replaces all instances of bob with BOB globally with confirmation
+${txtcyn}[:%s//BOB/gc]     ${txtrst}replaces all instances of last search with BOB globally with confirmation
 
 ${txtcyn}[:set all]        ${txtrst}to view all the options
-${txtcyn}[:set number]     ${txtrst}set line number
-${txtcyn}[:set nonumber]   ${txtrst}unset line number
+${txtcyn}[:set nu]         ${txtrst}set line number
+${txtcyn}[:set nonu]       ${txtrst}unset line number
+${txtcyn}[:set ic]         ${txtrst}ignore case for searching
 ${txtcyn}[:split file2]    ${txtrst}split window horizontally and open file2
 ${txtcyn}[:vsplit]         ${txtrst}split window vertically
 ${txtcyn}[Ctrl+W]          ${txtrst}to switch between windows
 ${txtcyn}[:close]          ${txtrst}to close the split window
 ${txtcyn}[:only]           ${txtrst}closes all the other split windows except the current one
-
 
 ${txtcyn}[:q!]     ${txtrst}quits without saving changes
 ${txtcyn}[:x]      ${txtrst}exits vi and prompts for saving
@@ -487,6 +487,9 @@ ${txtcyn}[:! ls -l]           ${txtrst}run external commands inside vi
 ${txtcyn}[:w !sudo tee %]     ${txtrst}save a read only file in Vi
 
 ${txtcyn}[+number file]      ${txtrst}open and go to the number-th line in the file (+/search-term)
+${txtcyn}[#]                 ${txtrst}search backward for the current word
+${txtcyn}[*]                 ${txtrst}search forward for the current word
+${txtcyn}[+ file]            ${txtrst}open and go to the last line in the file 
 ${txtpur}----------------------------------------------------------------------
 "
 }
@@ -553,11 +556,4 @@ function prod() {
 function dev() {
    /usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no shpaul@$1.brislabs.com
 }
-
-
-
-
-
-
-
 

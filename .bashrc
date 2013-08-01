@@ -500,7 +500,6 @@ ${txtcyn}[:wq]     ${txtrst}writes and quits vi
 ${txtcyn}[ZZ]      ${txtrst}saves and quits vi
 ${txtcyn}[:e!]     ${txtrst}undo all changes and reverts to the original state
 
-${txtcyn}[:e!]                ${txtrst}will undo everything since the last save
 ${txtcyn}[:! ls -l]           ${txtrst}run external commands inside vi
 ${txtcyn}[:w !sudo tee %]     ${txtrst}save a read only file in Vi
 

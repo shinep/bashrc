@@ -498,6 +498,7 @@ ${txtcyn}[:q!]     ${txtrst}quits without saving changes
 ${txtcyn}[:x]      ${txtrst}exits vi and prompts for saving
 ${txtcyn}[:wq]     ${txtrst}writes and quits vi
 ${txtcyn}[ZZ]      ${txtrst}saves and quits vi
+${txtcyn}[:e!]     ${txtrst}undo all changes and reverts to the original state
 
 ${txtcyn}[:e!]                ${txtrst}will undo everything since the last save
 ${txtcyn}[:! ls -l]           ${txtrst}run external commands inside vi
@@ -506,6 +507,7 @@ ${txtcyn}[:w !sudo tee %]     ${txtrst}save a read only file in Vi
 ${txtcyn}[+number file]      ${txtrst}open and go to the number-th line in the file (+/search-term)
 ${txtcyn}[#]                 ${txtrst}search backward for the current word
 ${txtcyn}[*]                 ${txtrst}search forward for the current word
+${txtcyn}[g*]                ${txtrst}search forward for any word with current word part of it
 ${txtcyn}[+ file]            ${txtrst}open and go to the last line in the file 
 ${txtpur}----------------------------------------------------------------------
 "

@@ -241,6 +241,13 @@ alias openports='netstat -nape --inet'
 alias ssh-keygen='ssh-keygen -Rv'
 alias gpull='git pull origin master -u'
 
+# Anti-virus checks
+
+alias rkhunter='sudo rkhuter --check'
+alias clamscan='sudo clamscan -irv --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/media --exclude=/mnt'
+alias lynis='sudo lynis -c'
+alias tiger='sudo tiger'
+
 
 export HISTIGNORE="ls:cd:[bf]g:exit"
 

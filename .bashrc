@@ -625,6 +625,7 @@ function dev() {
 }
 
 pullall() {
+CURRENTDIR="`pwd`"
 for dir in $(find ~/workspace/ -maxdepth 1 -type d); 
 do
   echo "$dir";
@@ -634,5 +635,6 @@ do
   	echo -e "${RED}Git Pull Failed for  $dir ${txtrst}";
   fi
 done
+command cd "$CURRENTDIR"
 }
 

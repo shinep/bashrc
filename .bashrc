@@ -312,6 +312,7 @@ functions()
   echo -e "${txtcyn}or <filename> 	: ${txtrst}creates a backup file"
   echo -e "${txtcyn}up <number> 	: ${txtrst}goes <number> level up like cd .."
   echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
+  echo -e "${txtcyn}pullall 	: ${txtrst}pulls all the git respositories in ~/workspace directory"
   echo -e ""
   echo -e "${txtcyn}tips 		: ${txtrst}general tips"
   echo -e "${txtcyn}bashtips 	: ${txtrst}tips on bash terminal"
@@ -621,5 +622,17 @@ function prod() {
 
 function dev() {
    /usr/bin/ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no shpaul@$1.brislabs.com
+}
+
+pullall() {
+for dir in $(find ~/workspace/ -maxdepth 1 -type d); 
+do
+  echo "$dir";
+  command cd "$dir";
+  git pull;
+  if [ $? != 0 ]; then
+  	echo -e "${RED}Git Pull Failed for  $dir ${txtrst}";
+  fi
+done
 }
 

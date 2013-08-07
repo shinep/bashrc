@@ -323,6 +323,7 @@ functions()
   echo -e "${txtcyn}mongotips 	: ${txtrst}basic mongo functionality"
   echo -e "${txtcyn}debugtips 	: ${txtrst}tips on debugging production servers"
   echo -e "${txtcyn}rangertips 	: ${txtrst}tips on using ranger"
+  echo -e "${txtcyn}magittips 	: ${txtrst}tips on using magit"
 }
 
 function bashtips {
@@ -613,6 +614,47 @@ ${txtcyn}[/s]         ${txtrst}searching file s in current directory.
 ${txtpur}----------------------------------------------------------------------
 "
 }
+
+function magittips {
+echo -e "${txtpur}
+----------------------------------------------------------------------${txtrst}
+${txtcyn}[Ctrl-X g]      ${txtrst}view magit status.
+${txtcyn}[Tab]           ${txtrst}toggle viewing changes to a file.
+${txtcyn}[s S]     	${txtrst}stage a file | all files.
+${txtcyn}[u U]     	${txtrst}unstage a file | all files.
+${txtcyn}[i I]     	${txtrst}add to gitignore | exclude file.
+${txtcyn}[k]     	${txtrst}discard changes to a file.
+${txtcyn}[c]     	${txtrst}start commit process and add a message.
+${txtcyn}[Ctrl-C Ctrl-C]     	${txtrst}finishes the commit.
+${txtcyn}[Ctrl-C K]     		${txtrst}discard the commit by killing the buffer.
+${txtcyn}[Ctrl-C Ctrl-A]     	${txtrst}amend the last commit.
+
+${txtcyn}[P]     	${txtrst}push all local commits.
+${txtcyn}[F]     	${txtrst}pull.
+${txtcyn}[$]     	${txtrst}view activity window.
+
+${txtcyn}[z]     	${txtrst}create a stash (make sure to give a good descriptive name)
+${txtcyn}[a]    		${txtrst}apply and keep the stash
+${txtcyn}[A]  		${txtrst}apply and remove the stash.
+${txtcyn}[k]  		${txtrst}discard a stash.
+
+${txtcyn}[l]            ${txtrst}bring up log view
+${txtcyn}[Spacebar]     ${txtrst}bring up the details of the log, again to page down the details
+${txtcyn}[Del/BckSpc]   ${txtrst}page up the details
+${txtcyn}[Ctrl-W]       ${txtrst}copy the sha of the commit
+
+${txtcyn}[b]     	${txtrst}switch to a branch
+${txtcyn}[B] 		${txtrst}create and switch to a branch
+${txtcyn}[m M]		${txtrst}merge branches
+
+${txtpur}----------------------------------------------------------------------
+"
+
+
+
+
+
+
 ##======================================
 #####NOKIA FUNCTIONS####################
 ##======================================

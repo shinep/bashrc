@@ -287,7 +287,7 @@ mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
 
 myip()
-{ 
+{
 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//';
 }
 
@@ -509,7 +509,7 @@ ${txtcyn}[+number file]      ${txtrst}open and go to the number-th line in the f
 ${txtcyn}[#]                 ${txtrst}search backward for the current word
 ${txtcyn}[*]                 ${txtrst}search forward for the current word
 ${txtcyn}[g*]                ${txtrst}search forward for any word with current word part of it
-${txtcyn}[+ file]            ${txtrst}open and go to the last line in the file 
+${txtcyn}[+ file]            ${txtrst}open and go to the last line in the file
 ${txtpur}----------------------------------------------------------------------
 "
 }
@@ -529,7 +529,7 @@ ${txtcyn}[ma]           ${txtrst}mark the current position with letter a
 ${txtcyn}['a]           ${txtrst}go to the marked position 'a'
 ${txtcyn}[&pattern]     ${txtrst}display only the matching lines, not all.
 
-${txtcyn}[:e file2]     ${txtrst}open another file 
+${txtcyn}[:e file2]     ${txtrst}open another file
 ${txtcyn}[:n]           ${txtrst}next file
 ${txtcyn}[:p]           ${txtrst}previous file
 ${txtpur}----------------------------------------------------------------------
@@ -564,7 +564,7 @@ mongotips()
   echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).count()"
   echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).pretty()"
   echo -e "${txtcyn}db.messages.remove({'subject.type':'event'})"
-  
+
  }
 
 debugtips()
@@ -642,6 +642,8 @@ ${txtcyn}[l]            ${txtrst}bring up log view
 ${txtcyn}[Spacebar]     ${txtrst}bring up the details of the log, again to page down the details
 ${txtcyn}[Del/BckSpc]   ${txtrst}page up the details
 ${txtcyn}[Ctrl-W]       ${txtrst}copy the sha of the commit
+${txtcyn}[.]            ${txtrst}mark/unmark a commit
+${txtcyn}[=]            ${txtrst}show differences between the marked commit and the current commit.
 
 ${txtcyn}[b]     	${txtrst}switch to a branch
 ${txtcyn}[B] 		${txtrst}create and switch to a branch
@@ -668,7 +670,7 @@ function dev() {
 
 pullall() {
 CURRENTDIR="`pwd`"
-for dir in $(find ~/workspace/ -maxdepth 1 -type d); 
+for dir in $(find ~/workspace/ -maxdepth 1 -type d);
 do
   echo "$dir";
   command cd "$dir";
@@ -679,4 +681,3 @@ do
 done
 command cd "$CURRENTDIR"
 }
-

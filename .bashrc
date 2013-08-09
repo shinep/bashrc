@@ -62,6 +62,10 @@ esac
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -651,9 +655,7 @@ ${txtcyn}[m M]		${txtrst}merge branches
 
 ${txtpur}----------------------------------------------------------------------
 "
-
-
-
+}
 
 
 

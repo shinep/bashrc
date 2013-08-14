@@ -663,12 +663,12 @@ echo -e "${txtpur}
 ----------------------------------------------------------------------${txtrst}
 ${txtcyn}git branch kafka      	${txtrst}Creates a new local branch kafka
 ${txtcyn}git checkout kafka      	${txtrst}Check out branch kafka
-${txtcyn}git push origin kafka         ${txtrst}Commits all the changes to kafka branch
-${txtcyn}git pull origin master        ${txtrst}Gets the kafka branch in sync with the master 
+${txtcyn}git push origin kafka          ${txtrst}Commits all the changes to kafka branch
+${txtcyn}git pull origin master         ${txtrst}Gets the kafka branch in sync with the master 
 ${txtcyn}git checkout master      	${txtrst}Checkout to master branch
-${txtcyn}git pull origin kafka         ${txtrst}Pulls all the changes from kafka branch to master
+${txtcyn}git pull origin kafka          ${txtrst}Pulls all the changes from kafka branch to master
 ${txtcyn}git status			${txtrst}Nothing to commit but will say you are ahead by so many commits
-${txtcyn}git push origin master        ${txtrst}Pushes all the merged changes from kafka brnach to master
+${txtcyn}git push origin master         ${txtrst}Pushes all the merged changes from kafka brnach to master
 
 ${txtcyn}git branch -a      		${txtrst}Shows all local branches
 ${txtcyn}git branch -r      		${txtrst}Shows all remote branches
@@ -676,8 +676,12 @@ ${txtcyn}git branch -d kafka      	${txtrst}Removes the local branch kafka
 ${txtcyn}git push origin :kafka  	${txtrst}Deletes the remote branch kafka
 ${txtcyn}git fetch -p      		${txtrst}After fetching removes any remote branch which no longer exists
 
-${txtcyn}git diff --cached     	${txtrst}to view changes after they are staged
-${txtcyn}git checkout fileName		${txtrst}To revert all the changes made to a file
+${txtcyn}git diff --cached     	                ${txtrst}to view changes after they are staged
+${txtcyn}git checkout fileName		        ${txtrst}To revert all the changes made to a file
+${txtcyn}git add . | git commit --amend		${txtrst}To revert all the changes made to a file
+
+${txtrst}Start a New Branch After Making Changes
+${txtcyn}git checkout -b new-kafka
 
 
 ${txtpur}----------------------------------------------------------------------

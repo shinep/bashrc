@@ -9,3 +9,5 @@ git config --global --bool pull.rebase true
 git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --decorate"
 git config --global user.name "Shine Paul"
 git config --global user.email "shine.paul@nokia.com"
+
+git config --global help.autocorrect 1

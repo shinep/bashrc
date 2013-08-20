@@ -682,6 +682,7 @@ ${txtcyn}git add . | git commit --amend		${txtrst}To revert all the changes made
 
 ${txtrst}Start a New Branch After Making Changes
 ${txtcyn}git checkout -b new-kafka
+${txtcyn}git log -Ssearch-term -p            ${txtrst}to search the log and show the diffs
 
 
 ${txtpur}----------------------------------------------------------------------

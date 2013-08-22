@@ -236,7 +236,7 @@ alias xmllint='xmllint --format'
 alias ll='ls -l --group-directories-first'
 alias mkdir='mkdir -p'
 alias cp="cp -v"
-alias grep='grep -iIr --color=tty'
+alias grep='grep -iI --color=tty'
 alias free='free -m'
 alias ports="lsof -i -n -P"
 alias ps='ps auxfwww'
@@ -244,6 +244,10 @@ alias ping='ping -c 10'
 alias openports='netstat -nape --inet'
 alias ssh-keygen='ssh-keygen -Rv'
 alias gpull='git pull origin master -u'
+alias more=less
+alias nuke=kill -9
+
+
 
 # Anti-virus checks
 
@@ -254,6 +258,9 @@ alias tiger='sudo tiger'
 
 
 export HISTIGNORE="ls:cd:[bf]g:exit"
+p() {
+   ps auxwww | grep "$*"
+}
 
 #Automatically do an ls after each cd
 cd() {
@@ -316,6 +323,7 @@ functions()
   echo -e "${txtcyn}or <filename> 	: ${txtrst}creates a backup file"
   echo -e "${txtcyn}up <number> 	: ${txtrst}goes <number> level up like cd .."
   echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
+  echo -e "${txtcyn}p           : ${txtrst}search for a process
   echo -e "${txtcyn}pullall 	: ${txtrst}pulls all the git respositories in ~/workspace directory"
   echo -e ""
   echo -e "${txtcyn}tips 		: ${txtrst}general tips"

@@ -469,6 +469,7 @@ ${txtcyn}[dd]    ${txtrst}deletes the whole line
 ${txtcyn}[dw]    ${txtrst}deletes a word
 ${txtcyn}[D,d$]     ${txtrst}deletes all text from cursor to end of line
 
+${txtcyn}[%y]    ${txtrst}copies the whole file
 ${txtcyn}[yy]    ${txtrst}copies the line of the text
 ${txtcyn}[yw]    ${txtrst}copies from the current cusror pos to end of word
 ${txtcyn}[y$]    ${txtrst}copies from the current cursor pos to end of line
@@ -515,6 +516,9 @@ ${txtcyn}[#]                 ${txtrst}search backward for the current word
 ${txtcyn}[*]                 ${txtrst}search forward for the current word
 ${txtcyn}[g*]                ${txtrst}search forward for any word with current word part of it
 ${txtcyn}[+ file]            ${txtrst}open and go to the last line in the file
+
+${txtcyn}[v V Ctrl+v]        ${txtrst}character selection, line selection, block selection mode
+
 ${txtpur}----------------------------------------------------------------------
 "
 }

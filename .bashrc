@@ -245,7 +245,7 @@ alias openports='netstat -nape --inet'
 alias ssh-keygen='ssh-keygen -Rv'
 alias gpull='git pull origin master -u'
 alias more=less
-alias nuke=kill -9
+alias nuke='kill -9'
 
 
 
@@ -322,8 +322,8 @@ functions()
   echo -e "${txtcyn}netinfo 	: ${txtrst}gets my internal ip address"
   echo -e "${txtcyn}or <filename> 	: ${txtrst}creates a backup file"
   echo -e "${txtcyn}up <number> 	: ${txtrst}goes <number> level up like cd .."
-  echo -e "${txtcyn}xlint 	: ${txtrst}formats an xml document"
-  echo -e "${txtcyn}p           : ${txtrst}search for a process
+  echo -e "${txtcyn}xlint 		: ${txtrst}formats an xml document"
+  echo -e "${txtcyn}p           	: ${txtrst}search for a process"
   echo -e "${txtcyn}pullall 	: ${txtrst}pulls all the git respositories in ~/workspace directory"
   echo -e ""
   echo -e "${txtcyn}tips 		: ${txtrst}general tips"

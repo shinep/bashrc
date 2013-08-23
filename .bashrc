@@ -581,6 +581,7 @@ mongotips()
   echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).count()"
   echo -e "${txtcyn}db.messages.find({'subject.type':'event'}).pretty()"
   echo -e "${txtcyn}db.messages.remove({'subject.type':'event'})"
+  echo -e "${txtcyn}db.messages.find({'subject.type.count': {$gt: 2}})"
 
  }
 

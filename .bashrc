@@ -698,6 +698,13 @@ ${txtrst}Start a New Branch After Making Changes
 ${txtcyn}git checkout -b new-kafka
 ${txtcyn}git log -Ssearch-term -p            ${txtrst}to search the log and show the diffs
 
+${txtrst}Revert to an older commit
+${txtcyn}git reset 56e05fced ${txtrst}resets index to former commit; replace '56e05fced' with your commit code
+${txtcyn}git reset --soft HEAD@{1} ${txtrst}moves pointer back to previous HEAD
+${txtcyn}git commit -m "Revert to 56e05fced"
+${txtcyn}git reset --hard ${txtrst}updates working copy to reflect the new commit
+
+
 
 ${txtpur}----------------------------------------------------------------------
 "
